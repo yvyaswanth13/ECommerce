@@ -16,11 +16,13 @@ export class NavBarComponent implements OnInit {
   GrandTotal:number=0;
   ngOnInit(): void {
     this.currentUser$=null;
+    
     // this.service.Getcartcount(1000).subscribe(data=>{
     //   console.log(data);
     //   this.basket$=data;
     // })
   }
+
   
 }
 

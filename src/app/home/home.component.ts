@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   AddProdtoCart(ProductId:number):void{
+    
     this.service.AddCart(ProductId,1000).subscribe(data=>{
       console.log("this is product data "+data);
       this.datas=data.result;

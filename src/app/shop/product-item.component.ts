@@ -22,21 +22,16 @@ export class ProductItemComponent implements OnInit {
   }
   onCloseHandled() {
     this.display = "none";
-    
-    
   }
   Viewproddetails(id:number):void{
     this.route.navigateByUrl("/view/"+id);
   }
 
   AddProdtoCart(ProductId:number):void{
+    
     this.service.AddCart(ProductId,1000).subscribe(data=>{
       console.log(data);
       this.datas=data.result;
       })
   }
-
-  
-  
-
 }

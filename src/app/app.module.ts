@@ -17,6 +17,8 @@ import { ProductComponent } from './product/product.component';
 import { UserAddressComponent } from './user-address/user-address.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     OrdersComponent,
     UserAddressComponent,
     DeleteComponent,
-    ProductComponent
+    ProductComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,9 @@ import { BillComponent } from './bill/bill.component';
 import { CartComponent } from './cart/cart.component';
 import { DeleteComponent } from './delete/delete.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { OrdersComponent } from './orders/orders.component';
+import { RegisterComponent } from './register/register.component';
 import { ProductViewComponent } from './shop/product-view.component';
 import { ShopComponent } from './shop/shop.component';
 import { UserAddressComponent } from './user-address/user-address.component';
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path:'bill',component:BillComponent},
   {path:'orders',component:OrdersComponent},
   {path:'address',component:UserAddressComponent},
-  {path:'delete',component:DeleteComponent}
+  {path:'delete',component:DeleteComponent},
+  {path:'login',component:LoginComponent},
+  {path:'register',component:RegisterComponent}
 
 ];
 

@@ -18,13 +18,11 @@ count:number=0;
 private loading: boolean=false;
 
   constructor(public service:CartService ) { 
-    
   }
 
   ngOnInit(): void {
     this.service.iscart=true;
     this.getCartProduct();
-    
 }
 getCartProduct()
 {
@@ -41,8 +39,8 @@ getCartProduct()
   },error(err){
  console.log(err)
   }});
-  
 }
+
 
 Removeitem(PdtId : number):void{
   this.loading=true
