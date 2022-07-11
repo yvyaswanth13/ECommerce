@@ -17,7 +17,7 @@ product:any;
 count:number=0;
 private loading: boolean=false;
 
-  constructor(public service:CartService ) { 
+  constructor(public service:CartService,private router:Router ) { 
   }
 
   ngOnInit(): void {
@@ -58,6 +58,10 @@ Removeitem(PdtId : number):void{
   
 
    //window.location.reload();
+}
+goToaddress(){
+    
+  this.router.navigate(['/','address'])
 }
 
 

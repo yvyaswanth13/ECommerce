@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Address } from '../Address';
 import { OrderAPIService } from '../order-api.service';
-import{FormGroup,FormControl,Validators} from '@angular/forms'
+import { OrderServiceService } from '../order-service.service';
+
 @Component({
   selector: 'app-user-address',
   templateUrl: './user-address.component.html',
@@ -20,23 +19,31 @@ export class UserAddressComponent implements OnInit {
         country :  "" ,
         mobile :  "" ,
         mailId :  "" ,
-        contactPerson :  ""
+        contactPerson :  "",
+        userId:0
       };
-  message: Object | undefined;
+      public response:string="";
   
-  constructor(private ser:OrderAPIService,private router:Router) { }
+  constructor(private ser:OrderAPIService) { }
+  private service!: OrderServiceService;
+  message: string="";
+  userId:number=1000;
   public goToOrders(){
-
-    console.log("OKKK");
-    let resp=this.ser.addAddress(this.myaddress);
-    resp.subscribe((data)=>this.message=data);
-    this.router.navigate(['/','orders']);
+    console.log(this.myaddress)
+    let resp=this.ser.addAddress(this.myaddress,this.userId);
+    resp.subscribe(data=>{
+    this.message=data.toString();
+    console.log(this.message)
+  //this.ser.message=this.message;
+   
+      });
+    
+  this.ser.goToBill();
+   
   }
  
 
   ngOnInit(): void {
-    
-  
   }
 
 }
